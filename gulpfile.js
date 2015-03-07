@@ -28,7 +28,7 @@ gulp.task('css', ['sass'], function() {
   return gulp.src([
       'css/normalize.css',
       'css/skeleton.css',
-      'css/style.css'
+      'build/css/style.css'
     ])
     .pipe(concat('style.min.css'))
     .pipe(minify())
