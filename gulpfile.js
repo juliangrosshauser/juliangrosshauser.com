@@ -43,7 +43,7 @@ gulp.task('js', function() {
     'js/animations.js'
   ])
   .pipe(concat('script.min.js'))
-  .pipe(uglify({ preserveComments: 'some', outSourceMap: false }))
+  .pipe(uglify({ preserveComments: 'none', outSourceMap: false }))
   .pipe(gulp.dest('dist/js'));
 });
 
