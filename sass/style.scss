@@ -1,0 +1,106 @@
+@import 'media-queries';
+
+html {
+  background-image: url(/images/background-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+
+  @include retina {
+    background-image: url(/images/background-mobile@2x.jpg);
+  }
+
+  @include phablet {
+    background-image: url(/images/background-phablet.jpg);
+  }
+
+  @include phablet-2x {
+    background-image: url(/images/background-phablet@2x.jpg);
+  }
+
+  @include tablet {
+    background-image: url(/images/background-tablet.jpg);
+  }
+
+  @include tablet-2x {
+    background-image: url(/images/background-tablet@2x.jpg);
+  }
+
+  @include desktop {
+    background-image: url(/images/background-desktop.jpg);
+  }
+
+  @include desktop-2x {
+    background-image: url(/images/background-desktop@2x.jpg);
+  }
+
+  @include desktop-hd {
+    background-image: url(/images/background-desktop-hd.jpg);
+  }
+
+  @include desktop-hd-2x {
+    background-image: url(/images/background-desktop-hd@2x.jpg);
+  }
+}
+
+a {
+  color: #323232;
+  text-decoration: none;
+  padding: 0.2rem;
+  border-bottom: 2px solid #D9E0E3;
+
+  &:hover {
+    color: #323232;
+    border-color: #94A1A7;
+  }
+}
+
+.container {
+  font-family: "museo-sans", "Helvetica Neue", Helvetica, sans-serif;
+  color: #323232;
+}
+
+.header {
+  margin-top: 4rem;
+  font-size: 2rem;
+  text-align: center;
+
+  & div:first-child {
+    margin-bottom: 2rem;
+
+    @include phablet {
+      margin-bottom: 0;
+    }
+  }
+
+  @include phablet {
+    text-align: left;
+
+    & .two span {
+      float: right;
+    }
+  }
+}
+
+// only works with specified height
+.absolutely-center {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.quote {
+  font-family: "museo-slab", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 2rem;
+  color: #94A1A7;
+  height: 20rem;
+  text-align: center;
+
+  & blockquote {
+    color: #5E676A;
+  }
+}
