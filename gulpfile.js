@@ -40,7 +40,9 @@ gulp.task('js', function() {
     'node_modules/jquery/dist/jquery.js',
     'node_modules/velocity-animate/velocity.js',
     'node_modules/velocity-animate/velocity.ui.js',
-    'js/animations.js'
+    'js/typekit.js',
+    'js/animations.js',
+    'js/analytics.js'
   ])
   .pipe(concat('script.min.js'))
   .pipe(uglify({ preserveComments: 'none', outSourceMap: false }))
