@@ -66,6 +66,7 @@ a {
   margin-top: 4rem;
   font-size: 2rem;
   text-align: center;
+  visibility: hidden;
 
   & div:first-child {
     margin-bottom: 2rem;
@@ -100,6 +101,7 @@ a {
   color: #94A1A7;
   height: 20rem;
   text-align: center;
+  visibility: hidden;
 
   & blockquote {
     color: #5E676A;

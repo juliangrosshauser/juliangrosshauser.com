@@ -35,6 +35,18 @@ gulp.task('css', ['sass'], function() {
     .pipe(gulp.dest('dist/css'));
 });
 
+gulp.task('js', function() {
+  return gulp.src([
+    'node_modules/jquery/dist/jquery.js',
+    'node_modules/velocity-animate/velocity.js',
+    'node_modules/velocity-animate/velocity.ui.js',
+    'js/animations.js'
+  ])
+  .pipe(concat('script.min.js'))
+  .pipe(uglify({ preserveComments: 'some', outSourceMap: false }))
+  .pipe(gulp.dest('dist/js'));
+});
+
 gulp.task('img', function() {
   return gulp.src('images/*')
     .pipe(imagemin({ optimizationLevel: 7, progressive: true, interlaced: true }))
@@ -55,10 +67,11 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('default', ['clean'], function() {
-  gulp.start('html', 'css', 'img');
+  gulp.start('html', 'css', 'js', 'img');
 });
 
 gulp.task('dev', ['browser-sync', 'default'], function() {
   gulp.watch('index.html', [browserSync.reload]);
   gulp.watch('sass/**/*.scss', ['sass']);
+  gulp.watch('js/**/*.js', ['js']);
 });
