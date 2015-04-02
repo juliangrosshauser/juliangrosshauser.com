@@ -55,20 +55,18 @@ gulp.task('clean', function(cb) {
   del(['dist', 'build'], cb);
 });
 
-gulp.task('browser-sync', function() {
+gulp.task('default', ['clean'], function() {
+  gulp.start('html', 'css', 'js', 'img');
+});
+
+gulp.task('dev', ['default'], function() {
   browserSync({
     server: {
       baseDir: './'
     },
     notify: false
   });
-});
 
-gulp.task('default', ['clean'], function() {
-  gulp.start('html', 'css', 'js', 'img');
-});
-
-gulp.task('dev', ['browser-sync', 'default'], function() {
   gulp.watch('index.html', [browserSync.reload]);
   gulp.watch('sass/**/*.scss', ['sass']);
   gulp.watch('js/**/*.js', ['js']);
